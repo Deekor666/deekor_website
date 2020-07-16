@@ -1,13 +1,21 @@
-import express from 'express';
+import express, { Request, Response } from 'express';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 import { request } from 'https';
 
 const app = express();
 
-app.get('/', (req: any) => {
-    req.name = 'John';
-    console.log(req.name);
+app.use(bodyParser.json());
+app.use(cors());
+
+app.get('/', (req: Request, res: Response): any => {
+    let name: string = 'JD';
+    res.send({
+        message: 'lalala'
+    })
+    console.log(name);
 })
 
-app.listen(3001, () => {
+app.listen(process.env.PORT || 3001, () => {
     console.log('You!');
 })
