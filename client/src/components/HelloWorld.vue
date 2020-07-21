@@ -1,12 +1,6 @@
-<template>
-  <div id="app">
-    <v-btn v-on:click="show = !show">
-      show
-    </v-btn>
-    <transition name="fade">
-      <h2 class="text-h2" v-if="show">hello</h2>
-    </transition>
-  </div>
+<template lang="pug">
+    div.hello.align-content-lg-center
+        p Hello!
 </template>
 <script lang="ts">
 import { Component, Prop, Vue } from 'vue-property-decorator';
