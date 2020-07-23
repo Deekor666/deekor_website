@@ -1,172 +1,130 @@
 <template lang="pug">
     .preloader
-        .container
-            .dash.uno
-            .dash.dos
-            .dash.tres
-            .dash.cuatro
+        .block-top
+            .block-top-1.block-top-group
+            .block-top-2.block-top-group
+            .block-top-3.block-top-group
+            .block-top-4.block-top-group
+            .block-top-5.block-top-group
+            .block-top-6.block-top-group
+            .block-top-7.block-top-group
+            .block-top-8.block-top-group
+        .block-bottom
+            .block-bottom-1.block-bottom-group
+            .block-bottom-2.block-bottom-group
+            .block-bottom-3.block-bottom-group
+            .block-bottom-4.block-bottom-group
+            .block-bottom-5.block-bottom-group
+            .block-bottom-6.block-bottom-group
+            .block-bottom-7.block-bottom-group
+            .block-bottom-8.block-bottom-group
+
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+import { Component, Vue } from "vue-property-decorator";
 
-    @Component
-    export default class Preloader extends Vue {
-
-    }
+@Component
+export default class Preloader extends Vue {}
 </script>
 
 <style lang="scss">
-    .preloader {
-        z-index: -10;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.7);
-        position: fixed;
+.preloader {
+  //   z-index: -10;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: fixed;
 
-        .container {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  .block-top {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 50%;
+    background-color: black;
 
-        .dash {
-            margin: 0 15px;
-            width: 35px;
-            height: 15px;
-            border-radius: 8px;
-            background: #FF2CBD;
-            box-shadow: 0 0 10px 0 #FECDFF;
-        }
-
-        .uno {
-            margin-right: -18px;
-            transform-origin: center left;
-            animation: spin 3s linear infinite;
-        }
-
-        .dos {
-            transform-origin: center right;
-            animation: spin2 3s linear infinite;
-            animation-delay: .2s;
-        }
-
-        .tres {
-            transform-origin: center right;
-            animation: spin3 3s linear infinite;
-            animation-delay: .3s;
-        }
-
-        .cuatro {
-            transform-origin: center right;
-            animation: spin4 3s linear infinite;
-            animation-delay: .4s;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            25% {
-                transform: rotate(360deg);
-            }
-            30% {
-                transform: rotate(370deg);
-            }
-            35% {
-                transform: rotate(360deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin2 {
-            0% {
-                transform: rotate(0deg);
-            }
-            20% {
-                transform: rotate(0deg);
-            }
-            30% {
-                transform: rotate(-180deg);
-            }
-            35% {
-                transform: rotate(-190deg);
-            }
-            40% {
-                transform: rotate(-180deg);
-            }
-            78% {
-                transform: rotate(-180deg);
-            }
-            95% {
-                transform: rotate(-360deg);
-            }
-            98% {
-                transform: rotate(-370deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
-
-        @keyframes spin3 {
-            0% {
-                transform: rotate(0deg);
-            }
-            27% {
-                transform: rotate(0deg);
-            }
-            40% {
-                transform: rotate(180deg);
-            }
-            45% {
-                transform: rotate(190deg);
-            }
-            50% {
-                transform: rotate(180deg);
-            }
-            62% {
-                transform: rotate(180deg);
-            }
-            75% {
-                transform: rotate(360deg);
-            }
-            80% {
-                transform: rotate(370deg);
-            }
-            85% {
-                transform: rotate(360deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        @keyframes spin4 {
-            0% {
-                transform: rotate(0deg);
-            }
-            38% {
-                transform: rotate(0deg);
-            }
-            60% {
-                transform: rotate(-360deg);
-            }
-            65% {
-                transform: rotate(-370deg);
-            }
-            75% {
-                transform: rotate(-360deg);
-            }
-            100% {
-                transform: rotate(-360deg);
-            }
-        }
+    .block-top-group {
+      width: 20%;
     }
+
+    .block-top-1 {
+      height: 40%;
+      background-color: white;
+    }
+    .block-top-2 {
+      height: 60%;
+      background-color: blueviolet;
+    }
+    .block-top-3 {
+      height: 80%;
+      background-color: rgb(43, 55, 226);
+    }
+    .block-top-6 {
+      height: 80%;
+      background-color: rgb(43, 55, 226);
+    }
+
+    .block-top-7 {
+      height: 60%;
+      background-color: rgb(133, 114, 151);
+    }
+
+    .block-top-8 {
+      height: 40%;
+      background-color: white;
+    }
+  }
+  .block-bottom {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    width: 100%;
+    height: 50%;
+    background-color: red;
+
+    .block-bottom-group {
+      width: 20%;
+    }
+
+    .block-bottom-1 {
+      position: relative;
+      top: -60%;
+      height: 160%;
+      background-color: yellow;
+    }
+    .block-bottom-2 {
+      position: relative;
+      top: -40%;
+      height: 140%;
+      background-color: rgb(86, 180, 83);
+    }
+    .block-bottom-3 {
+      position: relative;
+      top: -20%;
+      height: 120%;
+      background-color: rgb(83, 101, 180);
+    }
+    .block-bottom-6 {
+      position: relative;
+      top: -20%;
+      height: 120%;
+      background-color: rgb(109, 83, 180);
+    }
+
+    .block-bottom-7 {
+      position: relative;
+      top: -40%;
+      height: 140%;
+      background-color: rgb(83, 141, 180);
+    }
+
+    .block-bottom-8 {
+      position: relative;
+      top: -60%;
+      height: 160%;
+      background-color: yellow;
+    }
+  }
+}
 </style>
