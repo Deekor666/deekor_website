@@ -20,20 +20,14 @@
                 };
             }
             const sizeWindow: Record<string, number> = getSizeWindow();
-            const preloader: Record<string, any> = new Preloader(sizeWindow.width, sizeWindow.height, 'black');
+            const preloader: Record<string, any> = new Preloader(sizeWindow.width, sizeWindow.height, 'white');
             const htmlPreloader: HTMLElement = preloader.svg;
             preloader.addElement(htmlPreloader);
-            const curtains = new Curtains(htmlPreloader, getSizeWindow(), 16, 'black');
+            const curtains = new Curtains(htmlPreloader, getSizeWindow(), 20, 'black');
             Anime({});
         }
     }
 </script>
 
 <style lang="scss">
-#preload {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    // color: rgb(219, 13, 13);
-}
 </style>

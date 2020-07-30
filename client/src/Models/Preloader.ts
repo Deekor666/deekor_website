@@ -16,9 +16,10 @@ class Preloader {
     private createElement() {
         const svg: HTMLElement = document.createElement('svg');
         svg.style.width = this.width + 'px';
-        svg.style.height = this.width + 'px';
+        // svg.style.height = this.height + 'px';
         svg.style.position = 'absolute';
-        svg.style.background = 'gray';
+        svg.style.background = this.background;
+        // svg.style.opacity = '0.5';
         svg.id = this.id;
         return svg;
     }
