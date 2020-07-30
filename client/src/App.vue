@@ -1,16 +1,16 @@
 <template lang="pug">
   #app
-      Preloader
+      Preload
       router-view
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'vue-property-decorator';
-import Preloader from '@/components/Preloader.vue';
+import { Component, Vue } from 'vue-property-decorator';
+import Preload from '@/components/Preload.vue';
 
 @Component({
     components: {
-        Preloader
+        Preload
     }
 })
 export default class App extends Vue{

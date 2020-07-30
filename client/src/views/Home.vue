@@ -7,7 +7,6 @@
     // @ is an alias to /src
 import { Component, Vue } from 'vue-property-decorator'
 import Header from '@/components/Header.vue'
-import animejs from 'animejs'
 
 @Component({
   components: {
@@ -15,19 +14,13 @@ import animejs from 'animejs'
   }
 })
 export default class Home extends Vue {
-  public showPreloader: boolean | any = true;
+  public showPreloader: boolean = true;
   mounted(): void {
-    console.log(this.showPreloader);
     this.showPreloader = true;
     this.fetchData();
     }
   public async fetchData() {
     this.showPreloader = true;
-    /*
-    При загрузке контента
-    const promises = this.items.map(item => axios.get('/api/items/${item.id}/'));
-    const results = await Promise.all(promises);
-    */
     const result = await setTimeout(function () { console.log('Timer working') }, 10000);
 
     console.log(result);
