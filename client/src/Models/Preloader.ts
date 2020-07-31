@@ -1,9 +1,10 @@
+import snap from 'snapsvg';
+
 class Preloader {
-    id: string = 'preloader';
-    private width: number;
-    private height: number;
-    private background: string;
-    public svg: HTMLElement;
+    width: number;
+    height: number;
+    background: string;
+    svg: SVGSVGElement;
 
     constructor(width: number, height: number, background: string) {
         this.width = width;
@@ -13,18 +14,23 @@ class Preloader {
         this.svg = this.createElement();
     }
 
-    private createElement() {
-        const svg: HTMLElement = document.createElement('svg');
-        svg.style.width = this.width + 'px';
-        // svg.style.height = this.height + 'px';
+    createElement() {
+        const svg: SVGSVGElement = snap('#preloader');
+        svg.setAttribute('width', this.width + 'px');
+        svg.setAttribute('height', this.height + 'px');
         svg.style.position = 'absolute';
+        svg.setAttribute('height', this.height + 'px');
+        svg.setAttribute('x','0');
+        svg.setAttribute('y','0');
         svg.style.background = this.background;
-        // svg.style.opacity = '0.5';
-        svg.id = this.id;
+        svg.style.opacity = '1';
+
+        // svg.setAttribute('fill', 'black');
+
         return svg;
     }
 
-    addElement(svg: HTMLElement): void {
+    addElement(svg: HTMLElement, id: string): void {
         const preload: HTMLElement | null = document.getElementById('preload');
         if(preload !== null) {
             preload.appendChild(svg);
