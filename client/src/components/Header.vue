@@ -3,11 +3,10 @@
         h1.text-h1 {{ string1 + ' ' + string2 }}
         h2.text-h2 {{ list }}
         h3.text-h3 {{ fullName }}
-        h3.text-h3(v-model="msgChanged") {{ this.msg }}
 </template>
 
 <script lang="ts">
-import {Component, Prop, Watch, Vue} from 'vue-property-decorator';
+import {Component, Prop, Vue} from 'vue-property-decorator';
 
 @Component
 export default class Header extends Vue {
@@ -43,13 +42,6 @@ export default class Header extends Vue {
 /// Methods ///
     public addNum(num1: number, num2: number): number {
         return num1 + num2
-    }
-/// Watchers
-    @Watch('msg', {
-        immediate: true, deep: true
-    })
-    msgChanged(msg: string) {
-        // do something
     }
 }
 </script>

@@ -1,33 +1,30 @@
 <template lang="pug">
-    #preload
+    .preload#preload
 </template>
 
 <script lang="ts">
     import {Component, Vue} from "vue-property-decorator";
-    import Anime from 'animejs';
-    import { Curtains } from '../Models/Curtains';
-    import { Preloader } from '../Models/Preloader'
+    import { Curtain } from '../Models/Curtain';
+    import { Preloader } from '../Models/Preloader';
+import { Mesh } from "three";
+    // import { Path } from  '../Models/Path';
 
     @Component
     export default class Preload extends Vue {
         mounted(): void {
-            function getSizeWindow() {
-                const width: number = window.innerWidth;
-                const height: number = document.documentElement.clientHeight;
-                return {
-                    width: width,
-                    height: height
-                };
-            }
-            const sizeWindow: Record<string, number> = getSizeWindow();
-            const preloader: Record<string, any> = new Preloader(sizeWindow.width, sizeWindow.height, 'white');
-            const htmlPreloader: HTMLElement = preloader.svg;
-            preloader.addElement(htmlPreloader);
-            const curtains = new Curtains(htmlPreloader, getSizeWindow(), 20, 'black');
-            Anime({});
+            const preloader = new Preloader();
+            const curtain = new Curtain;
+            preloader.addMesh(curtain.mesh);
+            const myMesh: Mesh = preloader.scene.getObjectByName('curtain') as Mesh;
         }
     }
 </script>
 
 <style lang="scss">
+// .lalala {
+//     color: #595a7e;
+// }
+canvas {
+    position: absolute;
+}
 </style>

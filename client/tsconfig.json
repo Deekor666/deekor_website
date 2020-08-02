@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "esnext",
+    "target": "es6",
     "downlevelIteration": true,
     "module": "esnext",
     "strict": true,
