@@ -1,6 +1,6 @@
 <template lang="pug">
   .home
-    Header(msg="Hello Props!" age="32")
+    Header
 </template>
 
 <script lang="ts">
@@ -14,16 +14,6 @@ import Header from '@/components/Header.vue'
   }
 })
 export default class Home extends Vue {
-  public showPreloader: boolean = true;
-  mounted(): void {
-    this.showPreloader = true;
-    this.fetchData();
-    }
-  public async fetchData() {
-    this.showPreloader = true;
-    const result = await setTimeout(function () { console.log('Timer working') }, 10000);
 
-    console.log(result);
-  }
 }
 </script>
