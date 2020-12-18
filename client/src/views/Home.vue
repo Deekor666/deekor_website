@@ -22,7 +22,7 @@ export default class Home extends Vue {
   public async fetchData() {
     this.showPreloader = true;
     const result = await setTimeout(function () { console.log('Timer working') }, 10000);
-
+    console.log('ololo');
     console.log(result);
   }
 }

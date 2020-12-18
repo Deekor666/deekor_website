@@ -1,6 +1,5 @@
 <template lang="pug">
   #app
-      Preload
       router-view
 </template>
 
