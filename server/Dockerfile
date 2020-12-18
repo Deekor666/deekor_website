@@ -1,8 +1,7 @@
-FROM node:10
-WORKDIR /server
+FROM node:12.2.0-alpine
+WORKDIR /usr/app
 COPY ./package*.json ./
 RUN npm install
 COPY . .
-EXPOSE 3000
-CMD ["node", "server.js"]
+CMD ["npm", "run", "dev"]
 

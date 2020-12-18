@@ -1,0 +1,26 @@
+version: '3.5'
+services:
+  deekor_backend:
+    container_name: deekor_backend
+    build:
+      context: ./server
+    depends_on:
+      - deekor_db
+    volumes:
+    - ./server:/usr/app
+    - /usr/app/node_modules
+    ports:
+    - "8081:80"
+  deekor_db:
+    container_name: deekor_db
+    image: library/mongo:latest
+    restart: always
+  deekor_frontend:
+    container_name: deekor_frontend
+    build:
+      context: ./client
+    volumes:
+      - ./client:/app
+      - /app/node_modules
+    ports:
+      - "8080:8080"

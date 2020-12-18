@@ -1,9 +1,7 @@
-FROM node:10
-WORKDIR /client
+FROM node:12.2.0-alpine
+WORKDIR /app
 COPY ./package*.json ./
 RUN npm install
-RUN npm install -g http-server
 COPY . .
 RUN npm run build
-EXPOSE 8081
-CMD ["npm", "run test:dev"]
+CMD ["npm", "run", "dev"]
