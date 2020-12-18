@@ -1,8 +1,16 @@
 <template lang="pug">
     div.header
-        h1.text-h1 {{ string1 + ' ' + string2 }}
-        h2.text-h2 {{ list }}
-        h3.text-h3 {{ fullName }}
+      v-card(color='gray lighten-4', flat, height='200px', tile)
+        v-toolbar(extended)
+          v-app-bar-nav-icon
+          v-toolbar-title Deekor.dev
+          v-spacer
+          v-btn(icon)
+            v-icon mdi-magnify
+          v-btn(icon)
+            v-icon mdi-heart
+          v-btn(icon)
+            v-icon mdi-dots-vertical
 </template>
 
 <script lang="ts">
@@ -16,17 +24,6 @@ export default class Header extends Vue {
     @Prop({required: true}) readonly age!: number;
     @Prop(String) readonly address!: string;
     @Prop({required: false, type: String, default: 'Developer'}) readonly job!: string;
-
-    private list: Array<object> = [
-        {
-            name: 'Turk',
-            age: '26'
-        },
-        {
-            name: 'John',
-            age: '30'
-        }
-    ];
 
     data() {
         return {
